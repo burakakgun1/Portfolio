@@ -1,8 +1,3 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
-
 export const HERO_CONTENT = `Dayanıklı ve ölçeklenebilir web uygulamaları geliştirme konusunda tutkulu bir full stack developer'ım. Stajımı React, TypeScript, Bootstrap ve Redux gibi front-end teknolojilerinde kendimi geliştirerek tamamladım. Backend tarafında Node.js, Express.js, MongoDB ve SQL teknolojilerini kullanarak tam kapsamlı web uygulamaları geliştiriyorum. Sürekli bu alanda yeni şeyler öğrenerek kendimi geliştirmeye çalışıyorum.`
 export const ABOUT_TEXT = `Trakya Üniversitesi Bilgisayar Mühendisliği'nden 3.06/4 ortalama ile mezun oldum. Eğitim sürecimde Python, C, Assembly, Java, Swift, Flutter ve ReactJS gibi yazılım dillerini öğrendim. Şu anda full stack web geliştirme alanında kendimi geliştiriyorum. ReactJS, TypeScript, Redux gibi front-end teknolojilerinin yanı sıra Node.js, Express.js, MongoDB ve SQL gibi backend teknolojilerini de kullanarak tam kapsamlı web uygulamaları geliştiriyorum. Gelişime açık ve meraklı biriyim; öğrendiklerimi uygulamaya geçirerek daha fazla detay öğrenebileceğim, kendimi geliştirebileceğim bir iş arayışındayım. Farklı alanlarda da kendimi deniyorum ve geliştirmeye çalışıyorum. Önceliğim, alanında uzman kişilerle çalışarak her gün yeni şeyler öğrenmek, sahip olduğum bilgi ve yetenekleri gösterebilmek.`;
 
