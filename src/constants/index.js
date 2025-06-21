@@ -49,7 +49,7 @@ export const PROJECTS = [
     title: "Portfolio - Kişisel Web Sitesi",
     description: "Modern ve responsive tasarımla geliştirilmiş kişisel portfolio web sitesi. React ve Tailwind CSS kullanılarak oluşturulmuş, animasyonlar ve interaktif bileşenlerle zenginleştirilmiş.",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-    link: "https://burak-portfolio.vercel.app",
+    link: "https://burakakgun-portfolio.vercel.app",
     image: portfolioImg
   },
   {
