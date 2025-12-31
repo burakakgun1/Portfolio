@@ -1,63 +1,96 @@
 import sneaksterImg from "../assets/projects/sneakster.png";
 import emlakImg from "../assets/projects/emlak-otomasyon.png";
-import portfolioImg from "../assets/projects/Portfolio.png";
-import caffemoodImg from "../assets/projects/caffemood.jpg";
+import adelImg from "../assets/projects/adelimpex.png";
+import ipekyoluImg from "../assets/projects/ipekyolu.png";
+import sahinlerImg from "../assets/projects/sahinlergrupteknik.png";
+import feyatImg from "../assets/projects/feyatkabak.png";
+import bikeImg from "../assets/projects/licorneservice.png";
+import sergiImg from "../assets/projects/sergi.png";
 
-export const HERO_CONTENT = `Dayanıklı ve ölçeklenebilir web uygulamaları geliştirme konusunda tutkulu bir full stack developer'ım. Stajımı React, TypeScript, Bootstrap ve Redux gibi front-end teknolojilerinde kendimi geliştirerek tamamladım. Backend tarafında Node.js, Express.js, MongoDB ve SQL teknolojilerini kullanarak tam kapsamlı web uygulamaları geliştiriyorum. Sürekli bu alanda yeni şeyler öğrenerek kendimi geliştirmeye çalışıyorum.`
-export const ABOUT_TEXT = `Trakya Üniversitesi Bilgisayar Mühendisliği'nden 3.06/4 ortalama ile mezun oldum. Eğitim sürecimde Python, C, Assembly, Java, Swift, Flutter ve ReactJS gibi yazılım dillerini öğrendim. Şu anda full stack web geliştirme alanında kendimi geliştiriyorum. ReactJS, TypeScript, Redux gibi front-end teknolojilerinin yanı sıra Node.js, Express.js, MongoDB ve SQL gibi backend teknolojilerini de kullanarak tam kapsamlı web uygulamaları geliştiriyorum. Gelişime açık ve meraklı biriyim; öğrendiklerimi uygulamaya geçirerek daha fazla detay öğrenebileceğim, kendimi geliştirebileceğim bir iş arayışındayım. Farklı alanlarda da kendimi deniyorum ve geliştirmeye çalışıyorum. Önceliğim, alanında uzman kişilerle çalışarak her gün yeni şeyler öğrenmek, sahip olduğum bilgi ve yetenekleri gösterebilmek.`;
+export const HERO_CONTENT = `Next.js ve React ekosisteminde üretim ortamına alınmış (production) projeler geliştiren Full Stack Web Geliştiricisiyim. Headless CMS (Sanity), REST API mimarileri, performans optimizasyonu ve SEO odaklı uygulamalar üzerine çalışıyorum. Gerçek müşteriler için canlıya alınmış kurumsal web siteleri, servis merkezleri ve içerik yönetim platformları geliştirdim. Ölçeklenebilir, bakımı kolay ve kullanıcı deneyimi güçlü web uygulamaları üretmeyi hedefliyorum.`;
+
+export const ABOUT_TEXT = `Trakya Üniversitesi Bilgisayar Mühendisliği'nden 3.06/4.00 not ortalaması ile mezun oldum. Eğitim sürecimde Python, C, Assembly, Java, Swift ve ReactJS gibi dillerde temel attım. Kariyerime React ve Next.js odaklı Full Stack geliştirici olarak devam ediyorum. Kurumsal projelerde SEO uyumluluğu, sunucu taraflı render (SSR) ve modern CMS sistemleri konularında deneyim kazandım. Öğrenmeye ve gelişime açık yapımla, modern teknolojileri kullanarak kullanıcı deneyimini en üst seviyeye taşıyan projeler üretmeyi hedefliyorum.`;
 
 export const EXPERIENCES = [
   {
-    date: "Ocak 2024 - Temmuz 2024",
-    role: "Yazılım Geliştirici",
-    company: "İkatronik",
-    description: `Teknofest yarışmasına, tarımda kullanılacak insansız kara aracı projesi ile katıldım. Bu projede görüntü işleme, haritalama ve otonom sürüş algoritmaları üzerine çalıştım. Görevlerim arasında, aracın çevresel verileri algılayarak doğru şekilde yönlendirilmesi ve otonom sürüş kabiliyetlerinin geliştirilmesi yer aldı. Bu süreçte, ileri düzey algoritmalar ve yapay zeka uygulamaları ile ilgili değerli deneyimler kazandım.`,
-    technologies: ["Python", "ROS" , "Gazebo" , "RViz"],
-  },
-  {
-    date: "09.07.2024 - 23.08.2024",
-    role: "Yazılım Stajyeri",
-    company: "Vinya Bilişim ve Danışmanlık Hizmetleri",
-    description: `Stajım süresince React, TypeScript, Redux, Redux Toolkit ve Bootstrap gibi modern web teknolojilerini kullanarak çeşitli geliştirmelerde bulundum. Bu projelerde, front-end uygulamalarının yapılandırılması, durum yönetimi, kullanıcı arayüzlerinin optimize edilmesi gibi alanlarda aktif rol aldım. `,
-    technologies: ["React", "TypeScript", "Redux", "Bootstrap"],
-  },
-  {
-    date: "01.08.2022 - 26.08.2022",
+    date: "Temmuz 2025 - Halen",
     role: "Yazılım Stajyeri",
     company: "Atez Yazılım Teknolojileri A.Ş.",
-    description: `Javascript , Github , Veritabanı , Blockchain ve ERP alanlarında bilgi ve deneyim sahibi oldum. Aynı zamanda farklı konularda eğitime tabi tutuldum`,
-    technologies: ["Javascript", "Github", "Blockchain"],
+    description: `JavaScript ekosisteminde frontend ve backend geliştirmeleri üzerine çalıştım. Jira ve GitHub kullanarak yazılım yaşam döngüsü (SDLC) süreçlerine dahil oldum.`,
+    technologies: ["JavaScript", "Frontend", "Backend", "Jira", "GitHub"],
+  },
+  {
+    date: "Temmuz 2024 - Ağustos 2024",
+    role: "Yazılım Stajyeri",
+    company: "Vinya Bilişim ve Danışmanlık",
+    description: `React.js ve TypeScript kullanarak modüler ve sürdürülebilir arayüzler geliştirdim. Responsive tasarım prensiplerine uygun frontend geliştirmeleri yaptım. Code review süreçlerine aktif olarak katıldım.`,
+    technologies: ["React.js", "TypeScript", "Responsive Design"],
+  },
+  {
+    date: "Ocak 2024 - Temmuz 2024",
+    role: "Yazılım Geliştirici",
+    company: "Ikatronik",
+    description: `Teknofest 2024 İnsansız Kara Aracı (İKA) projesi kapsamında otonom sürüş ve görüntü işleme algoritmaları geliştirdim. Python ve C++ kullanarak ROS üzerinde sensör verileri ile gerçek zamanlı karar mekanizmaları tasarladım.`,
+    technologies: ["Python", "C++", "ROS", "Otonom Sürüş"],
   },
 ];
 
 export const PROJECTS = [
   {
-    title: "Sneakster - Ayakkabı Satış Sitesi",
-    description: "MERN stack kullanılarak geliştirilmiş modern ayakkabı satış platformu. Kullanıcı dostu arayüz ve gelişmiş e-ticaret özellikleri ile donatılmış.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "MERN"],
-    link: "https://sneakster-frontend.vercel.app/",
-    image: sneaksterImg
+    title: "Licorne Bike Service Center Platformu",
+    description: "Almanca ve İngilizce dil desteği sunan, bisiklet montaj ve servis bilgilendirme platformu. Geliştirilen Admin Paneli sayesinde teknik içerikler ve ürün bilgileri servis ekibi tarafından kolayca güncellenebilir. Next.js ve Nest.js mimarisinde, Cloudinary ve Resend entegrasyonlarıyla yüksek performanslı bir yapı kuruldu.",
+    technologies: ["Next.js", "Nest.js", "MongoDB", "Cloudinary", "Resend"],
+    link: "https://bike-app-mu.vercel.app",
+    image: bikeImg
   },
   {
-    title: "Emlak Otomasyon - Gayrimenkul Kiralama",
-    description: "Gayrimenkul kiralama ve satış işlemleri için geliştirilmiş kapsamlı web uygulaması. İlan yönetimi ve kullanıcı etkileşimi özellikleri.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "MERN"],
+    title: "Adel Impex",
+    description: "Lojistik firması için geliştirilen kurumsal web platformu. Sanity CMS ile içerik yönetimi ve Resend entegrasyonu ile iletişim formları sağlandı. SEO uyumlu ve yüksek performanslı.",
+    technologies: ["Next.js", "Sanity CMS", "Tailwind CSS", "Resend"],
+    link: "https://www.adelimpex.com",
+    image: adelImg
+  },
+  {
+    title: "İpekyolu Yapı Market",
+    description: "Yapı market sektörü için geliştirilen modern ve responsive web sitesi. Sanity CMS altyapısı sayesinde ürün ve içerik yönetimi kolaylaştırıldı.",
+    technologies: ["Next.js", "Sanity CMS", "Tailwind CSS"],
+    link: "https://www.ipekyoluyapimarket.com",
+    image: ipekyoluImg
+  },
+  {
+    title: "Şahinler Grup Teknik",
+    description: "Teknik servis ve mühendislik hizmetleri için oluşturulan kurumsal kimlik sitesi. Hızlı yükleme süreleri ve mobil uyumluluk odaklı geliştirildi.",
+    technologies: ["Next.js", "Sanity CMS", "Tailwind CSS"],
+    link: "https://sahinlergrupteknik.com",
+    image: sahinlerImg
+  },
+  {
+    title: "Feyat Kabak Mühendislik",
+    description: "Mühendislik firması için hazırlanan profesyonel web platformu. Proje vitrini ve hizmet detayları Sanity CMS üzerinden yönetilebilir yapıda tasarlandı.",
+    technologies: ["Next.js", "Sanity CMS", "Tailwind CSS"],
+    link: "https://www.feyatkabakmuhendislik.com",
+    image: feyatImg
+  },
+  {
+    title: "Emlak Otomasyon Sistemi",
+    description: "Filtreleme, kullanıcı yetkilendirme ve ilan yönetimi içeren web uygulaması. Prisma ORM kullanılarak veritabanı işlemleri optimize edildi.",
+    technologies: ["MERN Stack", "Prisma ORM"],
     link: "https://emlak-otomasyon.vercel.app",
     image: emlakImg
   },
   {
-    title: "Portfolio - Kişisel Web Sitesi",
-    description: "Modern ve responsive tasarımla geliştirilmiş kişisel portfolio web sitesi. React ve Tailwind CSS kullanılarak oluşturulmuş, animasyonlar ve interaktif bileşenlerle zenginleştirilmiş.",
-    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-    link: "https://burakakgun-portfolio.vercel.app",
-    image: portfolioImg
+    title: "Sneakster",
+    description: "Ürün listeleme, ürün detay sayfaları ve temel sepet yapısı içeren e-ticaret platformu.",
+    technologies: ["React", "MongoDB", "MERN"],
+    link: "https://sneakster-frontend.vercel.app",
+    image: sneaksterImg
   },
   {
-    title: "CaffeMood - Kahve Tarif Uygulaması",
-    description: "Flutter ile geliştirilmiş mobil kahve tarif uygulaması. Kullanıcılara kahve türlerine göre müzik önerileri ve playlist'ler sunan interaktif bir platform.",
-    technologies: ["Flutter", "Dart", "Mobile Development"],
-    link: "https://github.com/burakakgun1/CaffeMood",
-    image: caffemoodImg
+    title: "Proje Vitrini & Koleksiyonu",
+    description: "Geliştirdiğim tüm projelerin, demoların ve konsept çalışmaların interaktif bir şekilde sergilendiği, modern tasarıma sahip showcase platformu.",
+    technologies: ["Showcase", "Interactive UI", "Portfolio"],
+    link: "https://our-projects-eosin.vercel.app",
+    image: sergiImg
   }
 ];
 
