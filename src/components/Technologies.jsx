@@ -1,83 +1,154 @@
-import React from "react";
-import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript, SiMongodb, SiPostgresql, SiNodedotjs, SiNextdotjs, SiJira, SiNestjs, SiSanity, SiPrisma, SiCplusplus, SiPostman } from "react-icons/si";
-import { FaHtml5, FaPython, FaGitAlt, FaGithub, FaJava, FaSwift } from "react-icons/fa";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { TbBrandCSharp } from "react-icons/tb";
+import { 
+  SiDotnet, 
+  SiTypescript, 
+  SiJavascript, 
+  SiPostgresql, 
+  SiRedis, 
+  SiMongodb, 
+  SiNodedotjs, 
+  SiNestjs, 
+  SiPrisma, 
+  SiDocker, 
+  SiGithubactions, 
+  SiPostman, 
+  SiCplusplus,
+  SiNextdotjs
+} from "react-icons/si";
+import { FaPython, FaGitAlt, FaDatabase, FaServer, FaLanguage } from "react-icons/fa";
+import { RiReactjsLine } from "react-icons/ri";
+import { PlaywrightIcon, TestcontainersIcon } from "./Icons";
 
-const iconVariants = (duration) => ({
-  initial: { y: -10 },
-  animate: {
-    y: [10, -10],
-    transition: {
-      duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse",
-    },
-  },
-});
+const categories = [
+  { id: "all", label: "Tüm Yetenekler" },
+  { id: "backend", label: "Backend & Mimari" },
+  { id: "languages", label: "Programlama Dilleri" },
+  { id: "database", label: "Database & Caching" },
+  { id: "testing", label: "Testing & DevOps" },
+  { id: "spoken", label: "Diller" },
+];
 
-const technologies = [
-  { icon: RiReactjsLine, name: "React", desc: "Kullanıcı Arayüzü", color: "text-cyan-400", duration: 2.5 },
-  { icon: SiNextdotjs, name: "Next.js", desc: "Full Stack Framework", color: "text-white", duration: 3 },
-  { icon: SiTypescript, name: "TypeScript", desc: "Tip Güvenliği", color: "text-blue-500", duration: 3 },
-  { icon: FaHtml5, name: "HTML5", desc: "Web Standartı", color: "text-orange-500", duration: 5 },
-  { icon: RiTailwindCssFill, name: "Tailwind CSS", desc: "Modern CSS", color: "text-sky-500", duration: 6 },
-  { icon: SiNodedotjs, name: "Node.js", desc: "Backend Runtime", color: "text-green-500", duration: 4 },
-  { icon: SiNestjs, name: "Nest.js", desc: "Backend Framework", color: "text-red-600", duration: 4 },
-  { icon: SiMongodb, name: "MongoDB", desc: "NoSQL Veritabanı", color: "text-green-400", duration: 2.5 },
-  { icon: SiPostgresql, name: "PostgreSQL", desc: "İlişkisel Veritabanı", color: "text-blue-400", duration: 4.5 },
-  { icon: SiSanity, name: "Sanity", desc: "Headless CMS", color: "text-red-500", duration: 3 },
-  { icon: SiPrisma, name: "Prisma", desc: "Modern ORM", color: "text-white", duration: 5 },
-  { icon: FaPython, name: "Python", desc: "AI & Backend", color: "text-yellow-500", duration: 3.5 },
-  { icon: FaJava, name: "Java", desc: "Nesne Yönelimli Dil", color: "text-orange-400", duration: 2 },
-  { icon: SiCplusplus, name: "C++", desc: "Sistem Programlama", color: "text-blue-600", duration: 4 },
-  { icon: FaSwift, name: "Swift", desc: "iOS Geliştirme", color: "text-orange-500", duration: 3 },
-  { icon: FaGitAlt, name: "Git", desc: "Versiyon Kontrol", color: "text-orange-600", duration: 4 },
-  { icon: FaGithub, name: "GitHub", desc: "Kod Platformu", color: "text-white", duration: 2 },
-  { icon: SiJira, name: "Jira", desc: "Proje Yönetimi", color: "text-blue-600", duration: 5 },
-  { icon: SiPostman, name: "Postman", desc: "API Test Aracı", color: "text-orange-500", duration: 3 },
+const techItems = [
+  // Backend
+  { name: ".NET 9", category: "backend", desc: "Clean Architecture & CQRS", color: "text-purple-400", icon: SiDotnet },
+  { name: "ASP.NET Core", category: "backend", desc: "High Concurrency RESTful Web APIs", color: "text-indigo-400", icon: SiDotnet },
+  { name: "NestJS", category: "backend", desc: "Modüler Kurumsal REST API", color: "text-red-500", icon: SiNestjs },
+  { name: "Node.js", category: "backend", desc: "V8 JavaScript/TypeScript Runtime", color: "text-green-500", icon: SiNodedotjs },
+  { name: "RESTful APIs", category: "backend", desc: "Uçtan Uca Servis & Güvenlik Mimarisi", color: "text-emerald-400", icon: FaServer },
+  { name: "Next.js", category: "backend", desc: "Full Stack & SSR Mimari", color: "text-white", icon: SiNextdotjs },
+  { name: "React", category: "backend", desc: "Kullanıcı Arayüzü & Durum Yönetimi", color: "text-cyan-400", icon: RiReactjsLine },
+
+  // Languages
+  { name: "C#", category: "languages", desc: "Modern Nesne Yönelimli Sistem Geliştirme", color: "text-purple-400", icon: TbBrandCSharp },
+  { name: "TypeScript", category: "languages", desc: "Tip Güvenli Enterprise Kod Tabanı", color: "text-blue-400", icon: SiTypescript },
+  { name: "JavaScript", category: "languages", desc: "Modern ES6+ Ekosistemi", color: "text-yellow-400", icon: SiJavascript },
+  { name: "Python", category: "languages", desc: "YOLOv8 Görüntü İşleme & Scripting", color: "text-yellow-500", icon: FaPython },
+  { name: "SQL", category: "languages", desc: "İlişkisel Sorgu & İndeksleme Optimizasyonu", color: "text-sky-400", icon: FaDatabase },
+  { name: "C++", category: "languages", desc: "ROS & Yüksek Performanslı Sistemler", color: "text-blue-600", icon: SiCplusplus },
+
+  // Database & Caching
+  { name: "PostgreSQL", category: "database", desc: "xmin Concurrency Token & İlişkisel Veritabanı", color: "text-sky-400", icon: SiPostgresql },
+  { name: "Redis", category: "database", desc: "Dağıtık Kilit (Distributed Locks) & Caching", color: "text-red-500", icon: SiRedis },
+  { name: "MongoDB", category: "database", desc: "NoSQL Doküman Tabanlı Veritabanı", color: "text-green-400", icon: SiMongodb },
+  { name: "EF Core", category: "database", desc: "Entity Framework Core & Migration Yönetimi", color: "text-purple-300", icon: FaDatabase },
+  { name: "Prisma ORM", category: "database", desc: "Type-safe ORM & Veritabanı Şemaları", color: "text-teal-300", icon: SiPrisma },
+
+  // Testing & DevOps
+  { name: "Playwright", category: "testing", desc: "Page Object Model (POM) E2E Test Suite", color: "text-emerald-400", icon: PlaywrightIcon },
+  { name: "Docker", category: "testing", desc: "Compose ile Servis Konteynerizasyonu", color: "text-sky-400", icon: SiDocker },
+  { name: "Testcontainers", category: "testing", desc: "İzole DB/Redis Entegrasyon Testleri", color: "text-cyan-400", icon: TestcontainersIcon },
+  { name: "GitHub Actions", category: "testing", desc: "Otomatik CI/CD Test Boru Hatları", color: "text-blue-400", icon: SiGithubactions },
+  { name: "Postman", category: "testing", desc: "API Senaryo & Doğrulama Testleri", color: "text-orange-500", icon: SiPostman },
+  { name: "Git", category: "testing", desc: "Sürüm Kontrolü & Ekip İşbirliği", color: "text-orange-600", icon: FaGitAlt },
+
+  // Spoken Languages
+  { name: "Türkçe", category: "spoken", desc: "Anadil", color: "text-red-400", icon: FaLanguage },
+  { name: "İngilizce", category: "spoken", desc: "B2 - Profesyonel Çalışma Yetkinliği", color: "text-blue-400", icon: FaLanguage },
 ];
 
 const Technologies = () => {
-  return (
-    <div className="border-b border-neutral-800 pb-24 py-16">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.6 }}
-        className="mb-16 text-center text-4xl lg:text-5xl font-light"
-      >
-        <span className="gradient-text">Teknolojiler</span>
-      </motion.h2>
-      <motion.div
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-wrap justify-center items-center gap-6"
-      >
-        {technologies.map((tech, index) => (
-          <div key={index} className="relative group">
-            <motion.div
-              variants={iconVariants(tech.duration)}
-              initial="initial"
-              animate="animate"
-              className="glass rounded-2xl p-6 card-hover border border-neutral-700 cursor-pointer relative z-10"
-            >
-              <tech.icon className={`text-6xl lg:text-7xl ${tech.color}`} />
-            </motion.div>
+  const [activeCategory, setActiveCategory] = useState("all");
 
-            <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 w-max">
-              <div className="glass px-4 py-3 rounded-xl border border-neutral-700 bg-neutral-900/90 backdrop-blur-md shadow-xl text-center">
-                <h3 className="text-white font-semibold text-sm mb-1">{tech.name}</h3>
-                <p className="text-neutral-400 text-xs">{tech.desc}</p>
-              </div>
-              <div className="w-3 h-3 bg-neutral-900 border-r border-b border-neutral-700 transform rotate-45 absolute left-1/2 -translate-x-1/2 -bottom-1.5"></div>
-            </div>
-          </div>
-        ))}
+  const filteredItems = activeCategory === "all" 
+    ? techItems 
+    : techItems.filter(item => item.category === activeCategory);
+
+  return (
+    <section id="technologies" className="border-b border-neutral-800/80 pb-20 py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
+      >
+        <h2 className="text-4xl lg:text-5xl font-light tracking-tight">
+          <span className="gradient-text font-normal">Teknik Yetenekler & Teknolojiler</span>
+        </h2>
+        <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-xl mx-auto">
+          Clean Architecture, dağıtık sistemler, test otomasyonu ve modern web ekosisteminde kullandığım araçlar
+        </p>
       </motion.div>
-    </div>
+
+      {/* Category Pills */}
+      <div className="flex flex-wrap justify-center gap-2 mb-12 px-4">
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            onClick={() => setActiveCategory(cat.id)}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 ${
+              activeCategory === cat.id
+                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-purple-900/30 scale-105"
+                : "bg-neutral-900/80 text-neutral-400 hover:text-white hover:bg-neutral-800 border border-neutral-800"
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Tech Cards Grid */}
+      <motion.div 
+        layout
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      >
+        <AnimatePresence>
+          {filteredItems.map((tech, index) => {
+            const IconComponent = tech.icon;
+            return (
+              <motion.div
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3, delay: index * 0.02 }}
+                key={tech.name}
+                className="group p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-neutral-700/80 backdrop-blur-sm card-hover flex flex-col justify-between"
+              >
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="p-3 rounded-xl bg-neutral-950/80 border border-neutral-800/80 group-hover:border-purple-500/30 transition-colors">
+                    <IconComponent className={`text-3xl ${tech.color}`} />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-base group-hover:text-purple-300 transition-colors">
+                      {tech.name}
+                    </h3>
+                    <span className="text-[11px] uppercase tracking-wider text-neutral-500 font-medium">
+                      {tech.category}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-xs text-neutral-400 leading-relaxed pl-1">
+                  {tech.desc}
+                </p>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </motion.div>
+    </section>
   );
 };
 
