@@ -10,13 +10,10 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-purple-500 selection:text-white min-h-screen bg-neutral-950">
-      <div className="fixed top-0 -z-10 h-full w-full">
-        <div className="absolute top-0 z-[-2] h-screen w-screen bg-gradient-to-br from-black via-neutral-950 to-black bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))]"></div>
-      </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <div className="dev-grid-bg min-h-screen text-zinc-300 antialiased selection:bg-zinc-700 selection:text-white">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-6">
         <Navbar />
-        <main>
+        <main className="space-y-24 sm:space-y-28 mt-8">
           <Hero />
           <About />
           <Technologies />

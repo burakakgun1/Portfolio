@@ -4,70 +4,98 @@
 @tailwind utilities;
 
 :root {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color-scheme: dark;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background: linear-gradient(135deg, #050505 0%, #0a0a0a 50%, #050505 100%);
-    min-height: 100vh;
+  background-color: #090a0c;
+  color: #d4d4d8;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Modern glassmorphism effect */
-.glass {
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.02);
-    transition: all 0.5s ease-in-out;
+/* Subtle, sophisticated developer grid background */
+.dev-grid-bg {
+  background-color: #090a0c;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-.glass:hover {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+/* Clean, modern cards with subtle hairline borders */
+.pro-card {
+  background: #111215;
+  border: 1px solid #1f2128;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Modern gradient text */
-.gradient-text {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.pro-card:hover {
+  border-color: #2e323e;
+  transform: translateY(-2px);
 }
 
-/* Modern card hover effect */
-.card-hover {
-    transition: all 0.5s ease-in-out;
+/* Minimalist navigation bar */
+.pro-nav {
+  background: rgba(13, 14, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #1f2128;
 }
 
-.card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+/* Clean typography */
+.pro-heading {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
-/* Modern button styles */
-.btn-modern {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    transition: all 0.5s ease-in-out;
+/* High-contrast crisp buttons */
+.pro-btn-primary {
+  background: #ffffff;
+  color: #090a0c;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.15s ease;
 }
 
-.btn-modern:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+.pro-btn-primary:hover {
+  background: #e4e4e7;
+  transform: translateY(-1px);
 }
 
-/* Smooth section transitions */
-.section-fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-in-out;
+.pro-btn-secondary {
+  background: #16181d;
+  color: #e4e4e7;
+  border: 1px solid #272a34;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.15s ease;
 }
 
-.section-fade.visible {
-    opacity: 1;
-    transform: translateY(0);
+.pro-btn-secondary:hover {
+  background: #1f2128;
+  border-color: #3b3f4e;
+  color: #ffffff;
+}
+
+/* Clean custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090a0c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #272a34;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b3f4e;
 }
